@@ -13,7 +13,7 @@ st.set_page_config(
 
 # IMPORTANT: Replace with your actual Google AI Studio API key
 # For better security, use Streamlit secrets: st.secrets["API_KEY"]
-API_KEY = "AIzaSyBGV2rIslRwEz2oSRSsMoF-LUruIcbt3gQ" # Replace with your key
+API_KEY = "" # Replace with your key
 
 # --- Data for Topics (Expanded Curriculum) ---
 TOPICS = {
