@@ -13,7 +13,7 @@ st.set_page_config(
 
 # IMPORTANT: Replace with your actual Google AI Studio API key
 # For better security, use Streamlit secrets: st.secrets["API_KEY"]
-API_KEY = "" # Replace with your key
+API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # --- Data for Topics (Expanded Curriculum) ---
 TOPICS = {
@@ -48,6 +48,80 @@ TOPICS = {
             "eval() and exec()", "C Interoperability (ctypes)", "Writing C Extensions", "Common Design Patterns",
             "Memory Management & Garbage Collection", "Packaging & Distribution (PyPI)"
         ],
+    },
+    "Data Structures: Linear": {
+        "icon": "⛓️",
+        "subtopics": [
+            "Arrays & Lists: list (Dynamic Array)", "Arrays & Lists: tuple (Immutable Array)", "Arrays & Lists: array.array (Typed Array)", "Arrays & Lists: str (String / Character Array)", "Arrays & Lists: bytes", "Arrays & Lists: bytearray",
+            "Linked Lists: Singly Linked List", "Linked Lists: Doubly Linked List", "Linked Lists: Circular Linked List", "Linked Lists: Skip List", "Linked Lists: XOR Linked List", "Linked Lists: Self-Organizing List", "Linked Lists: Unrolled Linked List",
+            "Stacks (LIFO): Implementation via list", "Stacks (LIFO): Implementation via collections.deque", "Stacks (LIFO): queue.LifoQueue",
+            "Queues (FIFO): Implementation via collections.deque", "Queues (FIFO): queue.Queue", "Queues (FIFO): multiprocessing.Queue", "Queues (FIFO): Double-Ended Queue (deque)", "Queues (FIFO): Circular Queue",
+            "Hash-Based: dict (Hash Map)", "Hash-Based: set", "Hash-Based: frozenset", "Hash-Based: collections.Counter", "Hash-Based: collections.defaultdict", "Hash-Based: collections.OrderedDict", "Hash-Based: collections.ChainMap"
+        ]
+    },
+    "Data Structures: Trees": {
+        "icon": "🌳",
+        "subtopics": [
+            "General Trees: N-ary Tree",
+            "Binary Trees: Full, Complete, Perfect", "Binary Trees: Balanced & Degenerate",
+            "Binary Search Trees (BSTs)", "BSTs: Cartesian Tree & Treap",
+            "Self-Balancing BSTs: AVL Tree", "Self-Balancing BSTs: Red-Black Tree", "Self-Balancing BSTs: Splay Tree", "Self-Balancing BSTs: Scapegoat Tree",
+            "Heaps (Priority Queues): Binary Heap (heapq)", "Heaps: Min-Heap & Max-Heap", "Heaps: Binomial Heap", "Heaps: Fibonacci Heap",
+            "Tries (Prefix Trees): Standard Trie", "Tries: Ternary Search Tree", "Tries: Palindromic Tree",
+            "Segment/Interval: Segment Tree", "Segment/Interval: Fenwick Tree (BIT)", "Segment/Interval: Interval Tree", "Segment/Interval: K-D Tree",
+            "Multiway Trees: B-Tree & B+ Tree",
+            "Suffix Structures: Suffix Tree", "Suffix Structures: Suffix Automaton", "Suffix Structures: Suffix Array"
+        ]
+    },
+    "Data Structures: Graphs & Other": {
+        "icon": "🕸️",
+        "subtopics": [
+            "Graph Representations: Adjacency List", "Graph Representations: Adjacency Matrix", "Graph Representations: Incidence Matrix",
+            "Specialized Graphs: Gomory-Hu Tree",
+            "Advanced: Disjoint Set Union (DSU)", "Advanced: Bloom Filter", "Advanced: Sparse Table", "Advanced: Sparse Set", "Advanced: Rope", "Advanced: BK-Tree", "Advanced: Persistent Data Structures"
+        ]
+    },
+    "Algorithms: Sorting & Searching": {
+        "icon": "🔢",
+        "subtopics": [
+            "Sorting: Bubble Sort", "Sorting: Selection Sort", "Sorting: Insertion Sort", "Sorting: Merge Sort", "Sorting: Quick Sort", "Sorting: Heap Sort",
+            "Sorting: Timsort (Python's default)", "Sorting: Radix Sort", "Sorting: Counting Sort", "Sorting: Bucket Sort", "Sorting: Shell Sort",
+            "Searching: Linear Search", "Searching: Binary Search (bisect)", "Searching: Jump Search", "Searching: Interpolation Search", "Searching: Exponential Search", "Searching: Ternary Search"
+        ]
+    },
+    "Algorithms: Graphs": {
+        "icon": "📈",
+        "subtopics": [
+            "Graph Traversal: Breadth-First Search (BFS)", "Graph Traversal: Depth-First Search (DFS)",
+            "Shortest Path: Dijkstra's Algorithm", "Shortest Path: A* Search", "Shortest Path: Bellman-Ford", "Shortest Path: Floyd-Warshall (All-Pairs)", "Shortest Path: Johnson's Algorithm (All-Pairs)",
+            "Minimum Spanning Tree (MST): Kruskal's", "Minimum Spanning Tree (MST): Prim's", "Minimum Spanning Tree (MST): Borůvka's",
+            "Connectivity: Strongly Connected Components (Tarjan's)", "Connectivity: Bridges & Articulation Points",
+            "Network Flow: Ford-Fulkerson & Edmonds-Karp", "Network Flow: Dinic's Algorithm",
+            "Cycles: Cycle Detection",
+            "Matching: Hopcroft–Karp (Bipartite)", "Matching: Hungarian Algorithm",
+            "Other: Topological Sort", "Other: Graph Coloring", "Other: Lowest Common Ancestor (LCA)"
+        ]
+    },
+     "Algorithms: Paradigms & Techniques": {
+        "icon": "💡",
+        "subtopics": [
+            "Paradigms: Brute Force", "Paradigms: Greedy Algorithms", "Paradigms: Divide and Conquer",
+            "Dynamic Programming: Memoization (Top-down)", "Dynamic Programming: Tabulation (Bottom-up)", "Dynamic Programming: Knuth's Optimization",
+            "Paradigms: Backtracking", "Paradigms: Randomized Algorithms",
+            "String: Naive Search", "String: KMP Algorithm", "String: Boyer-Moore", "String: Rabin-Karp", "String: Aho-Corasick",
+            "String: Longest Common Subsequence (LCS)", "String: Longest Common Substring", "String: Edit Distance (Levenshtein)", "String: Manacher's Algorithm", "String: Z-algorithm",
+            "Techniques: Bit Manipulation / Bitmasking", "Techniques: Sliding Window", "Techniques: Two Pointers", "Techniques: Mo's Algorithm", "Techniques: Square Root Decomposition", "Techniques: Heavy-Light Decomposition", "Techniques: Meet-in-the-Middle"
+        ]
+    },
+    "Algorithms: Mathematical": {
+        "icon": "♾️",
+        "subtopics": [
+            "Prime Numbers: Primality Tests (Fermat, Miller-Rabin)", "Prime Numbers: Sieve of Eratosthenes", "Prime Numbers: Segmented Sieve",
+            "GCD: Euclidean Algorithm", "GCD: Extended Euclidean Algorithm",
+            "Modular Arithmetic: Modular Exponentiation", "Modular Arithmetic: Modular Multiplicative Inverse", "Modular Arithmetic: Chinese Remainder Theorem",
+            "Matrix Exponentiation", "Factorial of Large Numbers", "Gaussian Elimination",
+            "Computational Geometry: Convex Hull", "Computational Geometry: Line Intersection", "Computational Geometry: Closest Pair of Points"
+        ]
     }
 }
 
@@ -122,10 +196,10 @@ st.markdown("""
 # --- API Call Logic ---
 def fetch_api_content(prompt, content_type="course"):
     """Generic function to fetch content from the Google AI API."""
-    if API_KEY == "YOUR_API_KEY_HERE":
-        st.error("Please replace 'YOUR_API_KEY_HERE' with your actual Google AI Studio API key in the code.")
+    if API_KEY == "YOUR_API_KEY_HERE" or not API_KEY:
+        st.error("Please add your Google AI Studio API key to Streamlit secrets (st.secrets['GOOGLE_API_KEY']).")
         return None
-        
+
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
     payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}]}
     headers = {'Content-Type': 'application/json'}
@@ -133,7 +207,7 @@ def fetch_api_content(prompt, content_type="course"):
     try:
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()  # Raises an exception for 4XX or 5XX status codes
-        
+
         result = response.json()
         if "candidates" in result and result["candidates"]:
             text_content = result["candidates"][0]["content"]["parts"][0]["text"]
@@ -194,7 +268,9 @@ def display_sidebar():
         st.markdown("---")
 
         for category, data in TOPICS.items():
-            with st.expander(f"{data['icon']} {category}", expanded=(category == "Python Fundamentals")):
+            # Keep the first three categories expanded by default
+            is_expanded = category in ["Python Fundamentals", "Intermediate Python", "Advanced Python"]
+            with st.expander(f"{data['icon']} {category}", expanded=is_expanded):
                 for topic in data['subtopics']:
                     if st.button(topic, key=topic, use_container_width=True):
                         handle_topic_select(topic)
@@ -214,7 +290,7 @@ def handle_topic_select(topic):
 
 def display_welcome_message():
     """Shows the initial welcome screen."""
-    st.markdown("<p class='welcome-text'>📘 Master Python with AI</p>", unsafe_allow_html=True)
+    st.markdown("<p class='welcome-text'>📘 Master Python, Data Structures & Algorithms with AI</p>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size: 1.2rem;'>Select a topic from the sidebar to begin your personalized learning journey.</p>", unsafe_allow_html=True)
 
 def display_course_content():
@@ -245,7 +321,7 @@ def display_practice_problems():
     if not st.session_state.practice_problems[difficulty]:
         st.info(f"Could not generate {difficulty} problems. Please try again or select a different topic.")
         return
-        
+
     for i, problem in enumerate(st.session_state.practice_problems[difficulty]):
         st.markdown("<div class='problem-card'>", unsafe_allow_html=True)
 
@@ -305,7 +381,7 @@ else:
         if st.session_state.course_content:
             display_course_content()
         else:
-             st.info("Course content is being generated or was not found.")
+            st.info("Course content is being generated or was not found.")
 
     with practice_tab:
         display_practice_problems()
